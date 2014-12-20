@@ -1,0 +1,8 @@
+{"namespace": "MasteringHadoop.avro",
+ "type": "record",
+ "name": "Country",
+ "fields": [
+     {"name": "countryCode", "type": "string"},
+     {"name": "countryName",  "type": "string"}
+ ]
+}

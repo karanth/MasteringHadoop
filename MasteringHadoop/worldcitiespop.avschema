@@ -1,0 +1,13 @@
+{"namespace": "MasteringHadoop.avro",
+ "type": "record",
+ "name": "City",
+ "fields": [
+     {"name": "countryCode", "type": "string"},
+     {"name": "cityName",  "type": "string"},
+     {"name": "cityFullName", "type": "string"},
+     {"name": "regionCode", "type": ["int","null"]},
+     {"name": "population", "type": ["long", "null"]},
+     {"name": "latitude", "type": ["float", "null"]},
+     {"name": "longitude", "type": ["float", "null"]}
+ ]
+}
