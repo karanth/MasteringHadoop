@@ -25,7 +25,7 @@
             <configuration>
                 <archive>
                     <manifest>
-                        <mainClass>MasteringHadoop.MasteringHadoopReduceSideJoin</mainClass>
+                        <mainClass>MasteringHadoop.MasteringHadoopSequenceFile</mainClass>
                     </manifest>
                 </archive>
             </configuration>
@@ -35,7 +35,7 @@
             <configuration>
                 <archive>
                     <manifest>
-                        <mainClass>MasteringHadoop.MasteringHadoopReduceSideJoin</mainClass>
+                        <mainClass>MasteringHadoop.MasteringHadoopSequenceFile</mainClass>
                     </manifest>
                 </archive>
                 <descriptorRefs>
@@ -93,11 +93,11 @@
         <artifactId>hadoop-hdfs</artifactId>
         <version>2.2.0</version>
     </dependency>     -->
-    <dependency>
+    <!-- <dependency>
         <groupId>org.apache.hadoop</groupId>
         <artifactId>hadoop-common</artifactId>
         <version>2.2.0</version>
-    </dependency>
+    </dependency> -->
     <dependency>
         <groupId>org.apache.pig</groupId>
         <artifactId>pig</artifactId>
@@ -112,11 +112,6 @@
     <dependency>
         <groupId>org.apache.avro</groupId>
         <artifactId>avro</artifactId>
-        <version>1.7.6</version>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.avro</groupId>
-        <artifactId>avro-mapred</artifactId>
         <version>1.7.6</version>
     </dependency>
         </dependencies>
