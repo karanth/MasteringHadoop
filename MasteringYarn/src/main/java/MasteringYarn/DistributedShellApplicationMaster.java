@@ -59,13 +59,14 @@ public class DistributedShellApplicationMaster {
 
 
 
-        int allocatedContainers = 0;
-        while(allocatedContainers < numberOfContainers){
+        int completedContainers = 0;
+        int containerId = 0;
+        while(completedContainers < numberOfContainers){
 
-            AllocateResponse allocateResponse = resourceManagerClient.allocate(0);
+            AllocateResponse allocateResponse = resourceManagerClient.allocate(containerId);
+            containerId++;
 
             for(Container container : allocateResponse.getAllocatedContainers()){
-                allocatedContainers++;
 
                 ContainerLaunchContext shellContainerContext = Records.newRecord(ContainerLaunchContext.class);
                 shellContainerContext.setCommands(
@@ -80,17 +81,7 @@ public class DistributedShellApplicationMaster {
 
             }
 
-            Thread.sleep(1000);
-        }
-
-
-
-        int completedContainers = 0;
-        while(completedContainers < numberOfContainers){
-
-            AllocateResponse completeResponse = resourceManagerClient.allocate(completedContainers/numberOfContainers);
-
-            for(ContainerStatus containerStatus : completeResponse.getCompletedContainersStatuses()){
+            for(ContainerStatus containerStatus : allocateResponse.getCompletedContainersStatuses()){
                 completedContainers++;
                 System.out.println("Completed Container " + completedContainers + " " + containerStatus);
 
